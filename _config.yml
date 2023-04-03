@@ -1,6 +1,6 @@
 title: Junwoon Lee
 author: junwoonlee
-email: junwon1211@naver.com
+email: leejunwoon@robot.t.u-tokyo.ac.jp
 description: > # this means to ignore newlines until "show_exerpts:"
   Junwoon Lee's website
 show_excerpts: true # set to true to show excerpts on the homepage
@@ -25,7 +25,7 @@ plainwhite:
   # generate social links in footer
   social_links:
     #twitter: samarsault
-    email: junwoonlee@jrl.eng.osaka-u.ac.jp
+    email: leejunwoon@robot.t.u-tokyo.ac.jp
     github:  junwoonlee
     linkedIn: in/junwoon-lee/
     #dribbble: jekyll
