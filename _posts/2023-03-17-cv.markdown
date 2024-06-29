@@ -4,8 +4,8 @@ title:  "CV"
 date:   2023-03-17 14:14:36 +0900
 categories: CV
 ---
-<object data="/assets/cv.pdf" width="1000" height="1000" type="application/pdf"></object>
 You can also get my CV directly in [Here](/assets/cv.pdf).
+<object data="/assets/cv.pdf" width="1000" height="1000" type="application/pdf"></object>
 <!--  ![My helpful screenshoet](/assets/new2.png) -->
 <!--  [My helpful screenshot2](/assets/foo.pdf) -->
 <!--Hello
