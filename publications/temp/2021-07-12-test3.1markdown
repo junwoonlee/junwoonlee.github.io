@@ -1,0 +1,20 @@
+---
+title:  "Switch-SLAM: Switching-based LiDAR-Inertial-Visual SLAM for Degenerate Environments"
+date:   2024-04-13 09:26:10 +00:00
+image: /publications/images/iccas.png
+image_onhover: /publications/images/iccas.png
+author: "Junwoon Lee"
+authors: "<strong>Junwoon Lee</strong>, Ren Komatsu, Mitsuru Shinozaki, Toshihiro Kitajima, Hajime Asama, Qi An, and Atsushi Yamashita"
+venue: "IEEE Robotics and Automation Letters (RA-L)"
+youtube: https://youtu.be/OcC8nEZnk6w?si=vEvFIoYCJgfdCg31
+#page_url: 10.1109/LRA.2024.3421792
+#bib: |
+#  @article{Doe2021,
+#    author = {Doe J.},
+#    journal = {A journal of imaginary research},
+#    title = {Title of the publication},
+#    year = {2021}
+#  }
+#links:
+#  : https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.22334
+---
