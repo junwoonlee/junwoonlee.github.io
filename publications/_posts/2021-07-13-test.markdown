@@ -1,17 +1,20 @@
 ---
-title:  "Title of the publication"
-date:   2021-07-13 09:26:00 +00:00
-image: /publications/images/project-image.jpg
-image_onhover: /publications/images/project-image-on-hover.jpg
-author: "John Doe"
-authors: "<strong><a href='https://vsimkus.github.io/academic-jekyll/'>John Doe</a></strong>"
-venue: "Venue"
-bib: |
-  @article{Doe2021,
-    author = {Doe J.},
-    journal = {A journal of imaginary research},
-    title = {Title of the publication},
-    year = {2021}
-  }
+title:  "Switch-SLAM: Switching-based LiDAR-Inertial-Visual SLAM for Degenerate Environments"
+date:   2024-04-13 09:26:00 +00:00
+image: /publications/images/switch.gif
+image_onhover: /publications/images/switch.gif
+author: "Junwoon Lee"
+authors: "<strong>Junwoon Lee</strong>, Ren Komatsu, Mitsuru Shinozaki, Toshihiro Kitajima, Hajime Asama, Qi An, and Atsushi Yamashita"
+venue: "IEEE Robotics and Automation Letters (RA-L)"
+youtube: https://youtu.be/OcC8nEZnk6w?si=vEvFIoYCJgfdCg31
+#page_url: 10.1109/LRA.2024.3421792
+#bib: |
+#  @article{Doe2021,
+#    author = {Doe J.},
+#    journal = {A journal of imaginary research},
+#    title = {Title of the publication},
+#    year = {2021}
+#  }
+#links:
+#  : https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.22334
 ---
-Brief description of the project.
