@@ -77,13 +77,13 @@ h3 {
 
 h1 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 3.0rem;
+  font-size: 3.5rem;
   font-weight: normal;
   font-display: auto;
-  text-align: center;
+  text-align: left;
   padding: 0px;
   margin-block-start: 10px;
-  margin-block-end: 30px;
+  margin-block-end: 20px;
   margin-left: 0px;
   margin-right: 0px;
 
@@ -103,8 +103,8 @@ span.highlight {
 
 #portrait {
   border-radius: 10%;
-  width: 100%;
-  max-width: 100%
+  width: 170px;
+  //max-width: 170px;
 }
 
 
