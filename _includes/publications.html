@@ -21,9 +21,9 @@
         <br>
         {% assign need_separator = false %}
 
-        {% if post.youtube %}
+        {% if post.page_url %}
         {% assign need_separator = true %}
-        <a href="{{post.youtube}}">Youtube </a>
+        <a href="{{post.page_url}}" style="color: green">paper </a> 
         {% endif %}
 
         {% if post.youtube and post.page_url %}
@@ -31,9 +31,9 @@
         <em> / </em>
         {% endif %}
 
-        {% if post.page_url %}
+        {% if post.youtube %}
         {% assign need_separator = true %}
-        <a href="{{post.page_url}}">Link </a>
+        <a href="{{post.youtube}}">video </a>
         {% endif %}
 
         {% if post.bib %}

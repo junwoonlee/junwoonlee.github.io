@@ -7,6 +7,7 @@ author: "Junwoon Lee"
 authors: "<strong>Junwoon Lee</strong>, Masamitsu Kurisu, and Kazuya Kuriyama"
 venue: "Journal of Field Robotics"
 page_url: https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.22334
+youtube: images/TFB_SLAM.gif
 #bib: |
 #  @article{Doe2021,
 #    author = {Junwoon Lee, Masamitsu Kurisu, Kazuya Kuriyama},
