@@ -29,9 +29,15 @@ a:hover {
   text-decoration: none;
 }
 
+
 p {
   margin-block-start: $font-size-normal;
   margin-block-end: $font-size-normal;
+}
+pt {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  margin-block-start: $font-size-small;
+  margin-block-end: 0.8em;
 }
 
 em {
@@ -47,6 +53,12 @@ p {
   font-size: $font-size-normal;
   font-display: auto;
 }
+pt {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: $font-size-normal;
+  font-display: auto;
+}
+
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
@@ -156,6 +168,17 @@ body {
   }
 }
 
+.tt {
+  a {
+    color: #000000;
+  }
+  a:focus,
+  a:hover {
+    color: #f09228;
+    text-decoration: none;
+  }
+}
+
 // Bootstrap-specific
 
 body {
@@ -166,6 +189,15 @@ body {
 
 .font-small {
   font-size: $font-size-small;
+}
+
+.alignleft {
+	float: left;
+  line-height: 0.01em; 
+}
+.alignright {
+	float: right;
+  line-height: 0.01em; 
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
