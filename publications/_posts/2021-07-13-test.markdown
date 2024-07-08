@@ -7,6 +7,7 @@ author: "Junwoon Lee"
 authors: "<strong>Junwoon Lee</strong>, Ren Komatsu, Mitsuru Shinozaki, Toshihiro Kitajima, Hajime Asama, Qi An, and Atsushi Yamashita"
 venue: "IEEE Robotics and Automation Letters (RA-L)"
 youtube: https://youtu.be/OcC8nEZnk6w?si=vEvFIoYCJgfdCg31
+page_url: https://doi.org/10.1109/lra.2024.3421792
 #page_url: 10.1109/LRA.2024.3421792
 #bib: |
 #  @article{Doe2021,

@@ -23,7 +23,9 @@
 
         {% if post.page_url %}
         {% assign need_separator = true %}
-        <a href="{{post.page_url}}" style="color: green">paper </a> 
+        <div style="display:inline;" class="aa">
+        <a href="{{post.page_url}}">paper </a> 
+        </div>
         {% endif %}
 
         {% if post.youtube and post.page_url %}

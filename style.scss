@@ -179,6 +179,17 @@ body {
   }
 }
 
+.aa {
+  a {
+    color: green;
+  }
+  a:focus,
+  a:hover {
+    color: #f09228;
+    text-decoration: none;
+  }
+}
+
 // Bootstrap-specific
 
 body {
@@ -198,6 +209,12 @@ body {
 .alignright {
 	float: right;
   line-height: 0.01em; 
+}
+.alignleft2 {
+	float: left; 
+}
+.alignright2 {
+	float: right; 
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
