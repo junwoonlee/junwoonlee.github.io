@@ -212,9 +212,13 @@ body {
 }
 .alignleft2 {
 	float: left; 
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
 }
 .alignright2 {
 	float: right; 
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
