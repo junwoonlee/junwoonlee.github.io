@@ -6,6 +6,10 @@
   link: /
   anchor: '#publications'
   highlight: false
+- name: Honors
+  link: /
+  anchor: '#Honors'
+  highlight: false
 - name: Miscellaneous
   link: /
   anchor: '#Miscellaneous'

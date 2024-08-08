@@ -1,0 +1,21 @@
+---
+title:  "TC-LTIO: Tightly-coupled LiDAR Thermal Inertial Odometry for LiDAR or Visual Odometry Degraded Environments"
+date:   2024-08-01 09:26:00 +00:00
+image: /publications/images/ICCAS2024.png
+image_onhover: /publications/images/ICCAS2024.png
+author: "Junwoon Lee"
+authors: "<strong>Junwoon Lee</strong>, Taisei Ando, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and&nbspAtsushi&nbspYamashita"
+venue: "International Conference on Control, Automation and Systems (ICCAS)"
+#youtube: https://youtu.be/OcC8nEZnk6w?si=vEvFIoYCJgfdCg31
+#page_url: https://doi.org/10.1109/lra.2024.3421792
+#page_url: 10.1109/LRA.2024.3421792
+#bib: |
+#  @article{Doe2021,
+#    author = {Doe J.},
+#    journal = {A journal of imaginary research},
+#    title = {Title of the publication},
+#    year = {2021}
+#  }
+#links:
+#  : https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.22334
+---
