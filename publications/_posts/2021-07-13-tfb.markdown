@@ -4,7 +4,7 @@ date:   2024-04-09 09:26:00 +00:00
 image: /publications/images/JFR2024.png
 image_onhover: /publications/images/JFR2024.png
 author: "Junwoon Lee"
-authors: "<strong>Junwoon Lee</strong>, Masamitsu Kurisu, and Kazuya Kuriyama"
+authors: "<u>Junwoon Lee</u>, Masamitsu Kurisu, and Kazuya Kuriyama"
 venue: "Journal of Field Robotics"
 page_url: https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.22334
 youtube: images/TFB_SLAM.gif

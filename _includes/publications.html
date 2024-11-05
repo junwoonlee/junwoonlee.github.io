@@ -2,7 +2,7 @@
 {% if publication_posts.size > 0 %}
 <div class="row py-2">
     <div class="col-md-12" id="publications">
-        <h2>Publications</h2>
+        <h2>Selected Publications</h2>
     </div>
 </div>
 {% for post in publication_posts %}
@@ -20,6 +20,12 @@
         <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
         <br>
         {% assign need_separator = false %}
+        
+        {% if post.highlight %}
+        {% assign need_separator = true %}
+        <em style="color:red;">{{post.highlight}}</em>
+        <br>
+        {% endif %}
 
         {% if post.page_url %}
         {% assign need_separator = true %}

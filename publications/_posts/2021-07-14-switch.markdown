@@ -4,7 +4,7 @@ date:   2024-04-13 09:26:00 +00:00
 image: /publications/images/switch.gif
 image_onhover: /publications/images/switch.gif
 author: "Junwoon Lee"
-authors: "<strong>Junwoon Lee</strong>, Ren Komatsu, Mitsuru Shinozaki, Toshihiro Kitajima, Hajime Asama, Qi An, and Atsushi Yamashita"
+authors: "<u>Junwoon Lee</u>, Ren Komatsu, Mitsuru Shinozaki, Toshihiro Kitajima, Hajime Asama, Qi An, and Atsushi Yamashita"
 venue: "IEEE Robotics and Automation Letters (RA-L)"
 youtube: https://drive.google.com/file/d/1Tr6MTsK9tKwy4DCXLVDGhdjmaOJtNbK9/view?usp=share_link
 page_url: https://doi.org/10.1109/lra.2024.3421792
