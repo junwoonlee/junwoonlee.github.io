@@ -5,7 +5,7 @@ image: /publications/images/RA-L_demo.gif
 image_onhover: /publications/images/RA-L_demo.gif
 author: "Junwoon Lee"
 authors: "<u>Junwoon Lee</u>, Taisei Ando, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and Atsushi Yamashita"
-venue: "IEEE Robotics and Automation Letters (RA-L) (Under review)"
+venue: "IEEE Robotics and Automation Letters (RA-L) (Accepted)"
 youtube: https://drive.google.com/file/d/1XvSPxMLkMdzxHtYCzuWH3KyBlWENXDH6/view?usp=share_link
 #page_url: https://doi.org/10.1109/lra.2024.3421792
 #page_url: 10.1109/LRA.2024.3421792
