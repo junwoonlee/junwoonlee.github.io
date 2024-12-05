@@ -190,6 +190,29 @@ body {
   }
 }
 
+.pp {
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+  a:focus,
+  a:hover {
+    color: red;
+    text-decoration: underline;
+  }
+}
+
+.pr {
+  a {
+    color: red;
+  }
+  a:focus,
+  a:hover {
+    color: #f09228;
+    text-decoration: none;
+  }
+}
+
 // Bootstrap-specific
 
 body {

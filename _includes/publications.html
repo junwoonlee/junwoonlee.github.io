@@ -23,8 +23,17 @@
         
         {% if post.highlight %}
         {% assign need_separator = true %}
+
+        {% if post.highlight_url  %}
+        <div style="display:inline;" class="pr">
+        <a href="{{post.highlight_url}}">{{post.highlight}} </a>
+        <br>
+        </div>
+        {% else %}
         <em style="color:red;">{{post.highlight}}</em>
         <br>
+        {% endif %}
+
         {% endif %}
 
         {% if post.page_url %}
