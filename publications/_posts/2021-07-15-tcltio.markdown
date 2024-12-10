@@ -9,7 +9,7 @@ venue: "International Conference on Control, Automation and Systems (ICCAS)"
 highlight: "Best Paper Award (Top 1 out of 400 submitted papers)"
 highlight_url: "https://2024.iccas.org/?page_id=988"
 youtube: https://drive.google.com/file/d/1q5lla-2xXVCC7N7dVyilGK8_69WlvVaU/view?usp=share_link
-#page_url: https://doi.org/10.1109/lra.2024.3421792
+page_url: https://doi.org/10.23919/ICCAS63016.2024.10773102
 #page_url: https://www.robot.t.u-tokyo.ac.jp/~yamashita/paper/B/B322Final.pdf
 #bib: |
 #  @article{Doe2021,
