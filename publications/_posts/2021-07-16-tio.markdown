@@ -1,6 +1,6 @@
 ---
 title:  "Self-TIO: Thermal-Inertial Odometry via Self-supervised 16-bit Feature Extractor and Tracker"
-date:   2024-12-02 09:26:00 +00:00
+date:   2025-01-02 09:26:00 +00:00
 image: /publications/images/RA-L_demo.gif
 image_onhover: /publications/images/RA-L_demo.gif
 author: "Junwoon Lee"

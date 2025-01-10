@@ -1,7 +1,7 @@
 ---
 title:  "TC-LTIO: Tightly-coupled LiDAR Thermal Inertial Odometry for LiDAR or Visual Odometry Degraded Environments"
 date:   2024-08-01 09:26:00 +00:00
-image: /publications/images/ICCAS2024.png
+image: /publications/images/ICCAS2024-3.png
 image_onhover: /publications/images/ICCAS2024.png
 author: "Junwoon Lee"
 authors: "<u>Junwoon Lee</u>, Taisei Ando, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and&nbspAtsushi&nbspYamashita"
