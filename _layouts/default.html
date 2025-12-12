@@ -16,6 +16,9 @@
   <!-- The above meta tags must come first -->
 
   <meta name="author" content="{{ site.name }}" />
+  {% if site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
+  {% endif %}
   <title>{{ site.name }}</title>
 
   <!-- Bootstrap CSS 4.6.0, never versions fail to load -->
