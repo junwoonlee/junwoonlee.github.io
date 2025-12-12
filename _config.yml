@@ -40,8 +40,6 @@ disqus:
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: 'G-NB9KC5CRX9'
-# Google Search Console site verification token
-google_site_verification: "_YvAtGhThqAhBS9ltdBvV-D5zx1NTVnlakztMyyWqN4"
 # excerpt_separator: <!--more-->
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
