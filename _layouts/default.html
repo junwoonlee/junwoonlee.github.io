@@ -31,7 +31,9 @@
 </head>
 
 <body class="d-flex flex-column">
+  {% unless page.hide_nav %}
   {% include navigation.html %}
+  {% endunless %}
 
   <div class="container-fluid flex-fill">
     {{ content }}

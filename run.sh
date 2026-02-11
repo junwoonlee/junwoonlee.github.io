@@ -1,1 +1,1 @@
-bundle exec jekyll serve
+bundle exec jekyll serve -H 127.0.0.1 -P 4001 --livereload --livereload-port 35731
