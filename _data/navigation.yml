@@ -2,10 +2,6 @@
   link: /
   anchor: '#'
   highlight: false
-- name: Project
-  link: /projects/LatentAM/
-  anchor: ''
-  highlight: false
 - name: Publications
   link: /
   anchor: '#publications'
