@@ -45,7 +45,7 @@
   }
 
   /* Scene videos: stacked vertically, each video wide (6-panel = very wide, tight layout) */
-  .scene-videos-section.section { padding-top: 1rem; padding-bottom: 1.5rem; }
+  .scene-videos-section.section { padding-top: 0.5rem; padding-bottom: 0.75rem; }
   .scene-videos-section .container.is-max-desktop { max-width: 1200px; padding-left: 0.5rem; padding-right: 0.5rem; }
   .scene-videos-section .title { margin-bottom: 1.25rem; }
   .scene-videos-section .mb-4 { margin-bottom: 0.75rem !important; }
@@ -107,6 +107,92 @@
   #latam-hero .publication-title { margin-bottom: 1.25rem; line-height: 1.2; }
   #latam-hero .is-size-5 { margin-top: .5rem; }
   #latam-hero .publication-authors { margin-top: .5rem; margin-bottom: .75rem; }
+
+  /* Proposed Method: large overview image */
+  /* Compact margins between Abstract, Proposed Method, Online Mapping */
+  .abstract-section .hero-body { padding-top: 0.5rem; padding-bottom: 0.2rem; }
+  #proposed-method.section { padding-top: 0.2rem; padding-bottom: 0.5rem; }
+  #proposed-method .proposed-method-fig { margin: 1rem 0; }
+  #proposed-method .proposed-method-fig img { width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  /* Proposed Method click-to-expand */
+  .proposed-method-toggle {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .proposed-method-toggle:hover { opacity: 0.85; }
+  .proposed-method-section .proposed-method-toggle .abstract-icon { transition: transform 0.3s ease; }
+  .proposed-method-section.is-expanded .proposed-method-toggle .abstract-icon { transform: rotate(180deg); }
+  .proposed-method-section.is-expanded .proposed-method-content { max-height: 2500px !important; }
+
+  /* Model-agnostic Mapping: LOD-style comparison (3 images, 2 drag bars) */
+  .model-agnostic-section .lod-tabs { margin-bottom: 1.25rem; }
+  .model-agnostic-section .lod-tabs .lod-tab { margin: 0 0.35rem; }
+  .model-agnostic-section .lod-tabs .lod-tab.is-info { font-weight: 600; }
+  .lod-panels { margin-top: 0; }
+  .lod-panel { display: none; }
+  .lod-panel.is-active { display: block; }
+  .lod-comparison { width: 100%; margin: 0 auto; }
+  .lod-comp-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #111;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .lod-comp-container .lod-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+  .lod-panel[data-dataset="custom"] .lod-comp-container .lod-img {
+    object-fit: contain;
+  }
+  .lod-comp-container .lod-img:nth-child(1) { clip-path: inset(0 calc(100% - var(--p1, 33%)) 0 0); }
+  .lod-comp-container .lod-img:nth-child(2) { clip-path: inset(0 calc(100% - var(--p2, 66%)) 0 var(--p1, 33%)); }
+  .lod-comp-container .lod-img:nth-child(3) { clip-path: inset(0 0 0 var(--p2, 66%)); }
+  .lod-divider {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 6px;
+    margin-left: -3px;
+    background: rgba(255,255,255,0.6);
+    cursor: ew-resize;
+    z-index: 10;
+    touch-action: none;
+  }
+  .lod-divider[data-idx="1"] { left: var(--p1, 33%); }
+  .lod-divider[data-idx="2"] { left: var(--p2, 66%); }
+  .lod-divider:hover { background: rgba(255,255,255,0.9); }
+  .lod-divider::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px; height: 40px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  .lod-segment-labels {
+    display: flex;
+    width: 100%;
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    color: #333;
+    text-align: center;
+  }
+  .lod-segment-labels span:nth-child(1) { flex: 0 0 var(--p1, 33%); }
+  .lod-segment-labels span:nth-child(2) { flex: 0 0 calc(var(--p2, 66%) - var(--p1, 33%)); }
+  .lod-segment-labels span:nth-child(3) { flex: 1; }
+  .lod-segment-labels .lod-dim { font-size: 0.78em; font-weight: normal; opacity: 0.9; }
 </style>
 
 <section class="hero" id="latam-hero">
@@ -217,6 +303,31 @@
   </div>
 </section>
 
+<section class="section proposed-method-section" id="proposed-method">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 proposed-method-toggle has-text-centered" role="button" tabindex="0" aria-expanded="false" aria-controls="proposed-method-content">
+      Proposed Method
+      <span class="icon abstract-icon"><i class="fas fa-chevron-down"></i></span>
+    </h2>
+    <div class="proposed-method-content" id="proposed-method-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out;">
+      <div class="columns is-centered">
+        <div class="column is-12">
+          <div class="content has-text-justified">
+            <figure class="has-text-centered proposed-method-fig">
+              <img src="./static/video_2D/overview.png" alt="Proposed method overview">
+            </figure>
+            <ul>
+              <li><strong>Model-agnostic, pretraining-free, real-time latent feature mapping:</strong> LatentAM represents each 3D Gaussian with a compact query vector and reconstructs high-dimensional VLM embeddings via <strong>Gaussian memory attention over a learnable dictionary</strong>, enabling plug-and-play use with different VLMs (e.g., CLIP / DINOv3 / LSeg).</li>
+              <li><strong>Online dictionary learning:</strong> The dictionary is initialized and updated online using streaming K-means and historical learnings, then trained with trust-region regularization to reduce overfitting / catastrophic forgetting over long trajectories.</li>
+              <li><strong>Scalable local-global map management:</strong> LatentAM scales to large environments using voxel hashing and bounded GPU memory by optimizing only an active local map on the GPU while storing/indexing the global map on the CPU, achieving near-real-time performance and long-term, large-scale mapping.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section scene-videos-section" id="Online Mapping">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">
@@ -299,6 +410,54 @@
   </div>
 </section>
 
+<section class="section model-agnostic-section" id="model-agnostic-mapping">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Model-agnostic 3D Latent Gaussian</h2>
+    <p class="has-text-centered mb-5"></p>
+
+    <div class="lod-tabs has-text-centered">
+      <button type="button" class="lod-tab button is-medium is-info" data-dataset="tum3" aria-pressed="true">TUM3</button>
+      <button type="button" class="lod-tab button is-medium" data-dataset="custom" aria-pressed="false">Custom dataset</button>
+    </div>
+
+    <div class="lod-panels">
+      <div class="lod-panel is-active" id="panel-tum3" data-dataset="tum3">
+        <div class="lod-comparison">
+          <div class="lod-comp-container" id="comp-tum3">
+            <img class="lod-img" src="./static/video_2D/tum3_LSeg.png" alt="TUM3 LSeg">
+            <img class="lod-img" src="./static/video_2D/tum3_clip.png" alt="TUM3 CLIP">
+            <img class="lod-img" src="./static/video_2D/tum3_dinov3.png" alt="TUM3 DINOv3">
+            <div class="lod-divider" data-idx="1" role="slider" aria-valuenow="33" tabindex="0"></div>
+            <div class="lod-divider" data-idx="2" role="slider" aria-valuenow="66" tabindex="0"></div>
+          </div>
+          <div class="lod-segment-labels">
+            <span>LSeg <small class="lod-dim">512dim</small></span>
+            <span>CLIP <small class="lod-dim">768dim</small></span>
+            <span>DINOv3 <small class="lod-dim">1024dim</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lod-panel" id="panel-custom" data-dataset="custom">
+        <div class="lod-comparison">
+          <div class="lod-comp-container" id="comp-custom">
+            <img class="lod-img" src="./static/video_2D/custom_LSeg.png" alt="Custom LSeg">
+            <img class="lod-img" src="./static/video_2D/custom_clip.png" alt="Custom CLIP">
+            <img class="lod-img" src="./static/video_2D/custom_dinov3.png" alt="Custom DINOv3">
+            <div class="lod-divider" data-idx="1" role="slider" aria-valuenow="33" tabindex="0"></div>
+            <div class="lod-divider" data-idx="2" role="slider" aria-valuenow="66" tabindex="0"></div>
+          </div>
+          <div class="lod-segment-labels">
+            <span>LSeg <small class="lod-dim">512dim</small></span>
+            <span>CLIP <small class="lod-dim">768dim</small></span>
+            <span>DINOv3 <small class="lod-dim">1024dim</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -328,6 +487,98 @@
     v.addEventListener('loadeddata', function() { this.muted = true; this.play().catch(function() {}); });
     v.addEventListener('canplay', function() { this.muted = true; this.play().catch(function() {}); });
   });
+})();
+</script>
+<script>
+(function() {
+  var MIN_GAP = 8;
+  var MIN_EDGE = 5;
+
+  function initTabs() {
+    document.querySelectorAll('.lod-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var dataset = this.getAttribute('data-dataset');
+        document.querySelectorAll('.lod-tab').forEach(function(b) {
+          b.classList.remove('is-info');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        this.classList.add('is-info');
+        this.setAttribute('aria-pressed', 'true');
+        document.querySelectorAll('.lod-panel').forEach(function(panel) {
+          panel.classList.toggle('is-active', panel.getAttribute('data-dataset') === dataset);
+        });
+      });
+    });
+  }
+
+  function initDividers(container) {
+    if (!container) return;
+    var comparison = container.closest('.lod-comparison');
+    var p1 = 33, p2 = 66;
+    function applyP() {
+      container.style.setProperty('--p1', p1 + '%');
+      container.style.setProperty('--p2', p2 + '%');
+      if (comparison) {
+        comparison.style.setProperty('--p1', p1 + '%');
+        comparison.style.setProperty('--p2', p2 + '%');
+      }
+    }
+    applyP();
+
+    var div1 = container.querySelector('.lod-divider[data-idx="1"]');
+    var div2 = container.querySelector('.lod-divider[data-idx="2"]');
+    if (!div1 || !div2) return;
+
+    function setP(which, val) {
+      val = Math.max(MIN_EDGE, Math.min(100 - MIN_EDGE, val));
+      if (which === 1) {
+        p1 = val;
+        if (p2 - p1 < MIN_GAP) p2 = p1 + MIN_GAP;
+        if (p2 > 100 - MIN_EDGE) p2 = 100 - MIN_EDGE;
+      } else {
+        p2 = val;
+        if (p2 - p1 < MIN_GAP) p1 = p2 - MIN_GAP;
+        if (p1 < MIN_EDGE) p1 = MIN_EDGE;
+      }
+      applyP();
+      div1.setAttribute('aria-valuenow', Math.round(p1));
+      div2.setAttribute('aria-valuenow', Math.round(p2));
+    }
+
+    function drag(div, which) {
+      var rect = container.getBoundingClientRect();
+      function move(e) {
+        var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+        var pct = (x / rect.width) * 100;
+        setP(which, pct);
+      }
+      function stop() {
+        document.removeEventListener('mousemove', move);
+        document.removeEventListener('mouseup', stop);
+        document.removeEventListener('touchmove', move);
+        document.removeEventListener('touchend', stop);
+      }
+      document.addEventListener('mousemove', move);
+      document.addEventListener('mouseup', stop);
+      document.addEventListener('touchmove', move, { passive: true });
+      document.addEventListener('touchend', stop);
+    }
+
+    div1.addEventListener('mousedown', function(e) { e.preventDefault(); drag(div1, 1); });
+    div1.addEventListener('touchstart', function(e) { e.preventDefault(); drag(div1, 1); }, { passive: false });
+    div2.addEventListener('mousedown', function(e) { e.preventDefault(); drag(div2, 2); });
+    div2.addEventListener('touchstart', function(e) { e.preventDefault(); drag(div2, 2); }, { passive: false });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initTabs();
+      document.querySelectorAll('.lod-comp-container').forEach(initDividers);
+    });
+  } else {
+    initTabs();
+    document.querySelectorAll('.lod-comp-container').forEach(initDividers);
+  }
 })();
 </script>
 </html>
@@ -396,6 +647,20 @@
 	toggle.addEventListener('click', toggleAbstract);
 	toggle.addEventListener('keydown', function(e) {
 		if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAbstract(); }
+	});
+})();
+(function() {
+	var section = document.getElementById('proposed-method');
+	var toggle = section && section.querySelector('.proposed-method-toggle');
+	var content = document.getElementById('proposed-method-content');
+	if (!section || !toggle || !content) return;
+	function toggleProposed() {
+		section.classList.toggle('is-expanded');
+		toggle.setAttribute('aria-expanded', section.classList.contains('is-expanded'));
+	}
+	toggle.addEventListener('click', toggleProposed);
+	toggle.addEventListener('keydown', function(e) {
+		if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleProposed(); }
 	});
 })();
 </script>
