@@ -44,6 +44,64 @@
     margin: 20px 0;
   }
 
+  /* Scene videos: stacked vertically, each video wide (6-panel = very wide, tight layout) */
+  .scene-videos-section.section { padding-top: 1rem; padding-bottom: 1.5rem; }
+  .scene-videos-section .container.is-max-desktop { max-width: 1200px; padding-left: 0.5rem; padding-right: 0.5rem; }
+  .scene-videos-section .title { margin-bottom: 1.25rem; }
+  .scene-videos-section .mb-4 { margin-bottom: 0.75rem !important; }
+  .scene-videos-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+  .scene-video-block {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .scene-video-block .subtitle { margin-bottom: 0.5rem; margin-top: 0; font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
+  .video-column-labels {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #333;
+    text-align: center;
+  }
+  .video-column-labels span {
+    flex: 1;
+    padding: 0 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .video-wrapper.wide-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 6 / 1;
+    background: #0d0d0d;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .video-wrapper.wide-video .scene-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    vertical-align: top;
+  }
+  @media (max-width: 768px) {
+    .scene-video-block { width: 100%; }
+    .video-wrapper.wide-video { aspect-ratio: 5 / 1; }
+  }
+
   /* Extra vertical spacing for the top hero section */
   #latam-hero .hero-body { padding-top: 3.5rem; padding-bottom: 2.5rem; }
   #latam-hero .publication-title { margin-bottom: 1.25rem; line-height: 1.2; }
@@ -124,13 +182,16 @@
   </div>
 </section>
 
-<section class="hero is-small">
+<section class="hero is-small abstract-section" id="abstract-section">
   <div class="hero-body">
     <div class="columns is-centered has-text-centered">
       <div class="column is-three-fifths">
         <div class="container">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
+          <h2 class="title is-3 abstract-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="abstract-content">
+            Abstract
+            <span class="icon abstract-icon"><i class="fas fa-chevron-down"></i></span>
+          </h2>
+          <div class="content has-text-justified abstract-content" id="abstract-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out;">
             <p>
               We present <strong>LatentAM</strong>, an online 3D Gaussian Splatting (3DGS) mapping framework
               that builds scalable latent feature maps from streaming RGB-D observations for open-vocabulary
@@ -156,6 +217,87 @@
   </div>
 </section>
 
+<section class="section scene-videos-section" id="Online Mapping">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">
+      Online Mapping <span class="has-text-weight-normal is-size-5"></span>
+    </h2>
+    <p class="has-text-centered mb-4" style="margin-bottom: 0.75rem;"></p>
+
+    <div class="scene-videos-vertical">
+      <div class="scene-video-block">
+        <h3 class="subtitle is-5 has-text-centered">TUM - rgbd_dataset_freiburg1_desk</h3>
+        <div class="video-column-labels cols-6">
+          <span>Raw RGB</span>
+          <span>Online Rendered Feature</span>
+          <span>Query : Book</span>
+          <span>Query : Keyboard</span>
+          <span>Query : Game Pad</span>
+          <span>Query : Telephone</span>
+        </div>
+        <div class="video-wrapper wide-video">
+          <video class="scene-video" controls loop muted playsinline autoplay preload="auto">
+            <source src="./static/video_2D/tum1_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="scene-video-block">
+        <h3 class="subtitle is-5 has-text-centered">TUM - rgbd_dataset_freiburg3_long_office_household</h3>
+        <div class="video-column-labels cols-7">
+          <span>Raw RGB</span>
+          <span>Rendered Feature</span>
+          <span>Query : Bottle</span>
+          <span>Query : Book</span>
+          <span>Query : Keyboard</span>
+          <span>Query : Teddy Bear</span>
+          <span>Query : Chair</span>
+        </div>
+        <div class="video-wrapper wide-video">
+          <video class="scene-video" controls loop muted playsinline autoplay preload="auto">
+            <source src="./static/video_2D/tum3_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="scene-video-block">
+        <h3 class="subtitle is-5 has-text-centered">Replica - Room0</h3>
+        <div class="video-column-labels cols-5">
+          <span>Raw RGB</span>
+          <span>Online Rendered Feature</span>
+          <span>Query : Sofa</span>
+          <span>Query : Table</span>
+          <span>Query : Vase</span>
+        </div>
+        <div class="video-wrapper wide-video">
+          <video class="scene-video" controls loop muted playsinline autoplay preload="auto">
+            <source src="./static/video_2D/room0_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="scene-video-block">
+        <h3 class="subtitle is-5 has-text-centered">Replica - Room2</h3>
+        <div class="video-column-labels cols-5">
+          <span>Raw RGB</span>
+          <span>Online Rendered Feature</span>
+          <span>Query : Chair</span>
+          <span>Query : Table</span>
+          <span>Query : Vase</span>
+        </div>
+        <div class="video-wrapper wide-video">
+          <video class="scene-video" controls loop muted playsinline autoplay preload="auto">
+            <source src="./static/video_2D/room2_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -168,6 +310,26 @@
 }</code></pre>
   </div>
 </section>
+<script>
+(function() {
+  function playVideos() {
+    document.querySelectorAll('.scene-video').forEach(function(v) {
+      v.muted = true;
+      var p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(function() {});
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', playVideos);
+  } else {
+    playVideos();
+  }
+  document.querySelectorAll('.scene-video').forEach(function(v) {
+    v.addEventListener('loadeddata', function() { this.muted = true; this.play().catch(function() {}); });
+    v.addEventListener('canplay', function() { this.muted = true; this.play().catch(function() {}); });
+  });
+})();
+</script>
 </html>
 
 <style>
@@ -200,4 +362,40 @@
 		display: none;
 		background-color: #f1f1f1;
 	}
+
+	/* Abstract click-to-expand */
+	.abstract-toggle {
+		cursor: pointer;
+		user-select: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+	}
+	.abstract-toggle:hover { opacity: 0.85; }
+	.abstract-toggle .abstract-icon {
+		transition: transform 0.3s ease;
+	}
+	.abstract-section.is-expanded .abstract-toggle .abstract-icon {
+		transform: rotate(180deg);
+	}
+	.abstract-section.is-expanded .abstract-content {
+		max-height: 800px !important;
+	}
 </style>
+<script>
+(function() {
+	var section = document.getElementById('abstract-section');
+	var toggle = section && section.querySelector('.abstract-toggle');
+	var content = document.getElementById('abstract-content');
+	if (!section || !toggle || !content) return;
+	function toggleAbstract() {
+		section.classList.toggle('is-expanded');
+		toggle.setAttribute('aria-expanded', section.classList.contains('is-expanded'));
+	}
+	toggle.addEventListener('click', toggleAbstract);
+	toggle.addEventListener('keydown', function(e) {
+		if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAbstract(); }
+	});
+})();
+</script>
