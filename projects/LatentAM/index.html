@@ -193,6 +193,72 @@
   .lod-segment-labels span:nth-child(2) { flex: 0 0 calc(var(--p2, 66%) - var(--p1, 33%)); }
   .lod-segment-labels span:nth-child(3) { flex: 1; }
   .lod-segment-labels .lod-dim { font-size: 0.78em; font-weight: normal; opacity: 0.9; }
+
+  /* Open-vocabulary 3D segmentation: 4-panel comparison */
+  .open-vocab-section .ov-selections { margin-bottom: 1rem; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1.5rem; }
+  .open-vocab-section .ov-selections .field { margin-bottom: 0; }
+  .open-vocab-section .ov-selections .select { min-width: 140px; }
+  .open-vocab-section .ov-query-wrap { display: none; }
+  .open-vocab-section .ov-query-wrap.visible { display: inline-block; }
+  .ov-comp-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #111;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .ov-comp-container .ov-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+  }
+  .ov-comp-container .ov-img:nth-child(1) { clip-path: inset(0 calc(100% - var(--p1, 25%)) 0 0); }
+  .ov-comp-container .ov-img:nth-child(2) { clip-path: inset(0 calc(100% - var(--p2, 50%)) 0 var(--p1, 25%)); }
+  .ov-comp-container .ov-img:nth-child(3) { clip-path: inset(0 calc(100% - var(--p3, 75%)) 0 var(--p2, 50%)); }
+  .ov-comp-container .ov-img:nth-child(4) { clip-path: inset(0 0 0 var(--p3, 75%)); }
+  .ov-divider {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 6px;
+    margin-left: -3px;
+    background: rgba(255,255,255,0.6);
+    cursor: ew-resize;
+    z-index: 10;
+    touch-action: none;
+  }
+  .ov-divider:hover { background: rgba(255,255,255,0.9); }
+  .ov-divider::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px; height: 36px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  .ov-divider[data-idx="1"] { left: var(--p1, 25%); }
+  .ov-divider[data-idx="2"] { left: var(--p2, 50%); }
+  .ov-divider[data-idx="3"] { left: var(--p3, 75%); }
+  .ov-segment-labels {
+    display: flex;
+    width: 100%;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+  }
+  .ov-segment-labels span:nth-child(1) { flex: 0 0 var(--p1, 25%); }
+  .ov-segment-labels span:nth-child(2) { flex: 0 0 calc(var(--p2, 50%) - var(--p1, 25%)); }
+  .ov-segment-labels span:nth-child(3) { flex: 0 0 calc(var(--p3, 75%) - var(--p2, 50%)); }
+  .ov-comparison { width: 100%; }
+  .ov-comparison .ov-segment-labels { width: 100%; }
+  .ov-segment-labels span:nth-child(4) { flex: 1; }
+  .ov-footnote { font-size: 0.85rem; color: #666; font-style: italic; margin-top: 1rem; margin-bottom: 0; }
 </style>
 
 <section class="hero" id="latam-hero">
@@ -249,17 +315,12 @@
 
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-three-fifths">
-        <div class="container">
-
-          <div class="content has-text-justified">
-            <div style="position:relative;padding-top:56.25%;">
-              <!-- Replace VIDEO_ID with your YouTube video ID -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-12">
+          <div class="content">
+            <div class="video-wrapper-hero" style="position:relative;padding-top:56.25%;max-width:100%;">
               <iframe src="https://drive.google.com/file/d/15LevbsW4eOo3NYz8b6jDZdL7rFZi0lKn/preview" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-            </div>
-            <div class="notification is-warning is-light is-size-4 has-text-centered" style="margin-top: 1rem;">
-              <strong>Under construction.</strong> More demos will be added soon.
             </div>
           </div>
         </div>
@@ -337,7 +398,7 @@
 
     <div class="scene-videos-vertical">
       <div class="scene-video-block">
-        <h3 class="subtitle is-5 has-text-centered">TUM - rgbd_dataset_freiburg1_desk</h3>
+        <h3 class="subtitle is-5 has-text-centered">TUM - freiburg1_desk</h3>
         <div class="video-column-labels cols-6">
           <span>Raw RGB</span>
           <span>Online Rendered Feature</span>
@@ -355,7 +416,7 @@
       </div>
 
       <div class="scene-video-block">
-        <h3 class="subtitle is-5 has-text-centered">TUM - rgbd_dataset_freiburg3_long_office_household</h3>
+        <h3 class="subtitle is-5 has-text-centered">TUM - freiburg3_long_office_household</h3>
         <div class="video-column-labels cols-7">
           <span>Raw RGB</span>
           <span>Rendered Feature</span>
@@ -407,6 +468,51 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section open-vocab-section" id="open-vocab-seg">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Open-vocabulary 3D segmentation</h2>
+    <p class="has-text-centered mb-4"></p>
+
+    <div class="ov-selections">
+      <div class="field is-inline-block">
+        <label class="label is-small">Scene</label>
+        <div class="control">
+          <select class="select ov-scene-select" id="ov-scene-select" aria-label="Select scene">
+            <option value="tum1" selected>TUM1</option>
+            <option value="tum3">TUM3</option>
+          </select>
+        </div>
+      </div>
+      <div class="field is-inline-block ov-query-wrap" id="ov-query-wrap">
+        <label class="label is-small">Query</label>
+        <div class="control">
+          <select class="select ov-query-select" id="ov-query-select" aria-label="Select query"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="ov-comparison">
+      <div class="ov-comp-container" id="ov-comp-container">
+        <img class="ov-img" src="" alt="RGB" data-slot="rgb">
+        <img class="ov-img" src="" alt="Feature-3DGS" data-slot="feat">
+        <img class="ov-img" src="" alt="M3" data-slot="m3">
+        <img class="ov-img" src="" alt="LatentAM" data-slot="pro">
+        <div class="ov-divider" data-idx="1" role="slider" tabindex="0"></div>
+        <div class="ov-divider" data-idx="2" role="slider" tabindex="0"></div>
+        <div class="ov-divider" data-idx="3" role="slider" tabindex="0"></div>
+      </div>
+      <div class="ov-segment-labels">
+        <span>RGB</span>
+        <span>Feature-3DGS (Online)</span>
+        <span>M3 (Online)</span>
+        <span>LatentAM (ours)</span>
+      </div>
+    </div>
+
+    <p class="ov-footnote has-text-centered">*For Feature-3DGS and M3, we run online using the same keyframe selected by the proposed method.</p>
   </div>
 </section>
 
@@ -467,8 +573,14 @@
   booktitle = {To appear},
   year      = {2026}
 }</code></pre>
+    <div class="has-text-centered" style="margin-top: 1.5rem;">
+      <div class="notification is-warning is-light is-size-5">
+        <strong>Under construction.</strong> More demos will be added soon.
+      </div>
+    </div>
   </div>
 </section>
+
 <script>
 (function() {
   function playVideos() {
@@ -487,6 +599,160 @@
     v.addEventListener('loadeddata', function() { this.muted = true; this.play().catch(function() {}); });
     v.addEventListener('canplay', function() { this.muted = true; this.play().catch(function() {}); });
   });
+})();
+</script>
+<script>
+(function() {
+  var BASE = './static/video_2D/2D_seg/';
+  var QUERIES = {
+    tum1: [
+      { value: 'monitor', label: 'Monitor' },
+      { value: 'book', label: 'Book' },
+      { value: 'keyboard', label: 'Keyboard' }
+    ],
+    tum3: [
+      { value: 'keyboard', label: 'Keyboard' },
+      { value: 'monitor', label: 'Monitor' },
+      { value: 'teddy', label: 'Teddy bear' }
+    ]
+  };
+  var SLOTS = ['rgb', 'feat', 'm3', 'pro'];
+
+  var sceneSelect = document.getElementById('ov-scene-select');
+  var querySelect = document.getElementById('ov-query-select');
+  var queryWrap = document.getElementById('ov-query-wrap');
+  var container = document.getElementById('ov-comp-container');
+  var comparison = container && container.closest('.ov-comparison');
+
+  function showQueryWrap() {
+    if (queryWrap) queryWrap.classList.add('visible');
+  }
+
+  function populateQueries(scene) {
+    if (!querySelect) return;
+    var list = QUERIES[scene] || QUERIES.tum1;
+    querySelect.innerHTML = '';
+    list.forEach(function(q) {
+      var opt = document.createElement('option');
+      opt.value = q.value;
+      opt.textContent = q.label;
+      querySelect.appendChild(opt);
+    });
+  }
+
+  function getImagePath(scene, query, slot) {
+    if (slot === 'rgb') return BASE + scene + '_rgb.png';
+    return BASE + scene + '_' + slot + '_' + query + '.png';
+  }
+
+  function loadImages(scene, query) {
+    if (!container) return;
+    var imgs = container.querySelectorAll('.ov-img');
+    SLOTS.forEach(function(slot, i) {
+      var src = getImagePath(scene, query, slot);
+      if (imgs[i]) imgs[i].src = src;
+    });
+  }
+
+  function onSceneChange() {
+    var scene = sceneSelect.value || 'tum1';
+    populateQueries(scene);
+    var firstQuery = (QUERIES[scene] && QUERIES[scene][0]) ? QUERIES[scene][0].value : 'book';
+    querySelect.value = firstQuery;
+    loadImages(scene, firstQuery);
+  }
+
+  function onQueryChange() {
+    var scene = sceneSelect.value || 'tum1';
+    var query = querySelect.value;
+    if (query) loadImages(scene, query);
+  }
+
+  function initOvDividers() {
+    if (!container) return;
+    var p1 = 25, p2 = 50, p3 = 75;
+    var MIN_GAP = 6;
+    var MIN_EDGE = 5;
+
+    function applyP() {
+      container.style.setProperty('--p1', p1 + '%');
+      container.style.setProperty('--p2', p2 + '%');
+      container.style.setProperty('--p3', p3 + '%');
+      if (comparison) {
+        comparison.style.setProperty('--p1', p1 + '%');
+        comparison.style.setProperty('--p2', p2 + '%');
+        comparison.style.setProperty('--p3', p3 + '%');
+      }
+    }
+    applyP();
+
+    var div1 = container.querySelector('.ov-divider[data-idx="1"]');
+    var div2 = container.querySelector('.ov-divider[data-idx="2"]');
+    var div3 = container.querySelector('.ov-divider[data-idx="3"]');
+    if (!div1 || !div2 || !div3) return;
+
+    function setP(which, val) {
+      val = Math.max(MIN_EDGE, Math.min(100 - MIN_EDGE, val));
+      if (which === 1) {
+        p1 = val;
+        if (p2 - p1 < MIN_GAP) p2 = p1 + MIN_GAP;
+        if (p3 - p2 < MIN_GAP) p3 = p2 + MIN_GAP;
+        if (p3 > 100 - MIN_EDGE) p3 = 100 - MIN_EDGE;
+      } else if (which === 2) {
+        p2 = val;
+        if (p2 - p1 < MIN_GAP) p1 = p2 - MIN_GAP;
+        if (p3 - p2 < MIN_GAP) p3 = p2 + MIN_GAP;
+        if (p1 < MIN_EDGE) p1 = MIN_EDGE;
+      } else {
+        p3 = val;
+        if (p3 - p2 < MIN_GAP) p2 = p3 - MIN_GAP;
+        if (p2 - p1 < MIN_GAP) p1 = p2 - MIN_GAP;
+        if (p1 < MIN_EDGE) p1 = MIN_EDGE;
+      }
+      applyP();
+    }
+
+    function drag(div, which) {
+      var rect = container.getBoundingClientRect();
+      function move(e) {
+        var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+        setP(which, (x / rect.width) * 100);
+      }
+      function stop() {
+        document.removeEventListener('mousemove', move);
+        document.removeEventListener('mouseup', stop);
+        document.removeEventListener('touchmove', move);
+        document.removeEventListener('touchend', stop);
+      }
+      document.addEventListener('mousemove', move);
+      document.addEventListener('mouseup', stop);
+      document.addEventListener('touchmove', move, { passive: true });
+      document.addEventListener('touchend', stop);
+    }
+
+    div1.addEventListener('mousedown', function(e) { e.preventDefault(); drag(div1, 1); });
+    div1.addEventListener('touchstart', function(e) { e.preventDefault(); drag(div1, 1); }, { passive: false });
+    div2.addEventListener('mousedown', function(e) { e.preventDefault(); drag(div2, 2); });
+    div2.addEventListener('touchstart', function(e) { e.preventDefault(); drag(div2, 2); }, { passive: false });
+    div3.addEventListener('mousedown', function(e) { e.preventDefault(); drag(div3, 3); });
+    div3.addEventListener('touchstart', function(e) { e.preventDefault(); drag(div3, 3); }, { passive: false });
+  }
+
+  function init() {
+    showQueryWrap();
+    populateQueries('tum1');
+    querySelect.value = QUERIES.tum1[0].value;
+    loadImages('tum1', QUERIES.tum1[0].value);
+    if (sceneSelect) sceneSelect.addEventListener('change', onSceneChange);
+    if (querySelect) querySelect.addEventListener('change', onQueryChange);
+    initOvDividers();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
 <script>
