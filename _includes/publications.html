@@ -36,21 +36,34 @@
 
         {% endif %}
 
-        {% if post.page_url %}
+        {% if post.project_url %}
+        {% if need_separator %}<em> / </em>{% endif %}
         {% assign need_separator = true %}
-        <div style="display:inline;" class="aa">
-        <a href="{{post.page_url}}">paper </a> 
+        <div style="display:inline;" class="pr">
+        <a href="{{post.project_url}}">project-page</a>
         </div>
         {% endif %}
 
-        {% if post.youtube and post.page_url %}
+        {% if post.page_url %}
+        {% if need_separator %}<em> / </em>{% endif %}
         {% assign need_separator = true %}
-        <em> / </em>
+        <div style="display:inline;" class="aa">
+        <a href="{{post.page_url}}">paper</a>
+        </div>
         {% endif %}
 
         {% if post.youtube %}
+        {% if need_separator %}<em> / </em>{% endif %}
         {% assign need_separator = true %}
-        <a href="{{post.youtube}}">video </a>
+        <a href="{{post.youtube}}">video</a>
+        {% endif %}
+
+        {% if post.code_url %}
+        {% if need_separator %}<em> / </em>{% endif %}
+        {% assign need_separator = true %}
+        <div style="display:inline;" class="pc">
+        <a href="{{post.code_url}}">code</a>
+        </div>
         {% endif %}
 
         {% if post.bib %}

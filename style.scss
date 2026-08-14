@@ -213,6 +213,17 @@ body {
   }
 }
 
+.pc {
+  a {
+    color: purple;
+  }
+  a:focus,
+  a:hover {
+    color: #f09228;
+    text-decoration: none;
+  }
+}
+
 // Bootstrap-specific
 
 body {

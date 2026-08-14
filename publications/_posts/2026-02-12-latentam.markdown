@@ -1,0 +1,13 @@
+---
+title:  "LatentAM: Real-Time, Large-Scale Latent Gaussian Attention Mapping via Online Dictionary Learning"
+date:   2026-02-12 09:26:00 +00:00
+image: /publications/images/latentam.gif
+image_onhover: /publications/images/latentam.gif
+author: "Junwoon Lee"
+authors: "<u>Junwoon Lee</u>, Yulun Tian"
+venue: "IEEE Robotics and Automation Letters (RA-L)"
+project_url: https://junwoonlee.github.io/projects/LatentAM/
+page_url: https://arxiv.org/abs/2602.12314
+youtube: https://youtu.be/Lk1UmnjazX0
+code_url: https://github.com/UMich-SSI-Lab/latentam
+---
