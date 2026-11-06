@@ -282,6 +282,26 @@ body {
     color: #b0b0b0;
     margin: 0 0.5rem;
   }
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .pub-tabs {
+    h2, .pub-tab-sep {
+      font-size: 1.25rem;
+    }
+    .pub-tab-sep {
+      margin: 0 0.3rem;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .pub-tabs {
+    h2, .pub-tab-sep {
+      font-size: 1.05rem;
+    }
+  }
 }
 
 .full-pubs {
@@ -291,10 +311,21 @@ body {
     margin: 0.5rem 0;
   }
   .full-pub-list {
-    padding-left: 1.5rem;
+    list-style: decimal;
+    padding-left: 1.75rem;
     li {
+      padding-left: 0.25rem;
       margin-bottom: 0.5rem;
       line-height: 1.5;
+    }
+  }
+  @media (max-width: 576px) {
+    .full-pub-heading {
+      font-size: 1.05rem;
+    }
+    .full-pub-list {
+      padding-left: 1.4rem;
+      font-size: 0.95rem;
     }
   }
   .full-pub-note {
