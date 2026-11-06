@@ -1,10 +1,13 @@
 {% assign publication_posts = site.posts | contains: 'categories', 'publications' %}
 {% if publication_posts.size > 0 %}
 <div class="row py-2">
-    <div class="col-md-12" id="publications">
-        <h2>Selected Publications</h2>
+    <div class="col-md-12 pub-tabs" id="publications">
+        <h2><a href="#publications" class="pub-tab active" data-target="pub-selected">Selected Publications</a></h2>
+        <span class="pub-tab-sep">|</span>
+        <h2><a href="#publications" class="pub-tab" data-target="pub-full">Full Publications</a></h2>
     </div>
 </div>
+<div id="pub-selected" class="pub-panel">
 {% for post in publication_posts %}
 <div class="row py-2 publication">
     <div class="col-md-5 col-sm-12 project-thumbnail-parent" align="center">
@@ -34,6 +37,7 @@
         <br>
         {% endif %}
 
+        {% assign need_separator = false %}
         {% endif %}
 
         {% if post.project_url %}
@@ -102,4 +106,24 @@
     </div>
 </div>
 {% endfor %}
+</div>
 {% endif %}
+
+{% include full_publications.html %}
+
+<script>
+(function () {
+    var tabs = document.querySelectorAll('.pub-tab');
+    tabs.forEach(function (tab) {
+        tab.addEventListener('click', function (e) {
+            e.preventDefault();
+            tabs.forEach(function (t) {
+                var on = t === tab;
+                t.classList.toggle('active', on);
+                var panel = document.getElementById(t.dataset.target);
+                if (panel) panel.hidden = !on;
+            });
+        });
+    });
+})();
+</script>

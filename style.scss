@@ -170,7 +170,7 @@ body {
 
 .tt {
   a {
-    color: #000000;
+    color: #1f77b4;
   }
   a:focus,
   a:hover {
@@ -263,4 +263,42 @@ body {
 .code {
   // @extend .text-monospace;
   background-color: #f8f8f8;
+}
+// Publication tabs (Selected / Full)
+.pub-tabs {
+  .pub-tab {
+    color: #b0b0b0;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .pub-tab:hover {
+    color: #f09228;
+  }
+  .pub-tab.active {
+    color: #000000;
+  }
+  .pub-tab-sep {
+    font-size: 1.75rem;
+    color: #b0b0b0;
+    margin: 0 0.5rem;
+  }
+}
+
+.full-pubs {
+  .full-pub-heading {
+    display: block;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  .full-pub-list {
+    padding-left: 1.5rem;
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+  }
+  .full-pub-note {
+    color: red;
+    font-style: italic;
+  }
 }

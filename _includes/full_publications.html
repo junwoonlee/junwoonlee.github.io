@@ -1,0 +1,27 @@
+{% assign fp = site.data.full_publications %}
+<div id="pub-full" class="pub-panel full-pubs" hidden>
+{% assign sections = "journal|Journal Publications,conference|International Conference Publications,domestic|Domestic Conference Publications (Japanese)" | split: "," %}
+{% for sec in sections %}
+    {% assign kv = sec | split: "|" %}
+    {% assign key = kv.first %}
+    {% assign heading = kv.last %}
+    {% assign items = fp[key] %}
+    {% if items and items.size > 0 %}
+    <div class="row py-2">
+        <div class="col-md-12">
+            <h3 class="full-pub-heading">{{ heading }}</h3>
+            <ol class="full-pub-list">
+            {% for p in items %}
+                <li>
+                    {{ p.authors }},
+                    {% if p.url %}<a href="{{ p.url }}">&ldquo;{{ p.title }},&rdquo;</a>{% else %}&ldquo;{{ p.title }},&rdquo;{% endif %}
+                    <em>{{ p.venue }}</em>{% if p.volume and p.volume != "" %}, vol. {{ p.volume }}{% endif %}{% if p.number and p.number != "" %}, no. {{ p.number }}{% endif %}{% if p.pages and p.pages != "" %}, pp. {{ p.pages }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}.
+                    {% if p.note %}<span class="full-pub-note">{{ p.note }}</span>{% endif %}
+                </li>
+            {% endfor %}
+            </ol>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+</div>

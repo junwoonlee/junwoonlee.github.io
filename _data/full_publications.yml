@@ -1,0 +1,106 @@
+# Full publication list (shown under the "Full Publications" tab).
+# Fields: title, authors, venue, volume, number, pages, year, note (optional), url (optional)
+# Empty fields are skipped automatically. Use <u>Junwoon Lee</u> to underline your name.
+
+journal:
+  - title: "LatentAM: Real-Time, Large-Scale Latent Gaussian Attention Mapping via Online Dictionary Learning"
+    authors: "<u>Junwoon Lee</u>, Yulun Tian"
+    venue: "IEEE Robotics and Automation Letters (RA-L)"
+    volume: "11"
+    number: "10"
+    pages: "11110-11117"
+    year: 2026
+
+  - title: "CubeDVO: Cubemap-Spherical Deep Visual Odometry for a Monocular 360-Degree Camera"
+    authors: "Taisei Ando, <u>Junwoon Lee</u>, Takuya Igaue, Kohtaro Nakamura, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and Atsushi Yamashita"
+    venue: "IEEE Robotics and Automation Letters (RA-L)"
+    volume: "11"
+    number: "8"
+    pages: "9543-9550"
+    year: 2026
+
+  - title: "Robot Localization by Data Integration of Multiple Thermal Cameras in Low-light Environment"
+    authors: "Masaki Chino, <u>Junwoon Lee</u>, Qi An, and Atsushi Yamashita"
+    venue: "International Journal of Automation Technology (IJAT)"
+    volume: "19"
+    number: "4"
+    pages: "566-574"
+    year: 2025
+
+  - title: "Efficient Distortion Mitigation in Equirectangular Images for Two-View Pose Estimation"
+    authors: "Taisei Ando, <u>Junwoon Lee</u>, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and Atsushi Yamashita"
+    venue: "International Journal of Automation Technology (IJAT)"
+    volume: "19"
+    number: "3"
+    pages: "226-236"
+    year: 2025
+
+  - title: "Self-TIO: Thermal-Inertial Odometry via Self-supervised 16-bit Feature Extractor and Tracker"
+    authors: "<u>Junwoon Lee</u>, Taisei Ando, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and Atsushi Yamashita"
+    venue: "IEEE Robotics and Automation Letters (RA-L)"
+    volume: "10"
+    number: "2"
+    pages: "1003-1010"
+    year: 2025
+
+  - title: "Switch-SLAM: Switching-based LiDAR-Inertial-Visual SLAM for Degenerate Environments"
+    authors: "<u>Junwoon Lee</u>, Ren Komatsu, Mitsuru Shinozaki, Toshihiro Kitajima, Hajime Asama, Qi An, and Atsushi Yamashita"
+    venue: "IEEE Robotics and Automation Letters (RA-L)"
+    volume: "9"
+    number: "8"
+    pages: "7270-7277"
+    year: 2024
+
+  - title: "Three-dimensionalized feature-based LiDAR-visual odometry for online mapping of unpaved road surfaces"
+    authors: "<u>Junwoon Lee</u>, Masamitsu Kurisu, and Kazuya Kuriyama"
+    venue: "Journal of Field Robotics"
+    volume: "41"
+    number: "5"
+    pages: "1452-1468"
+    year: 2024
+
+conference:
+  - title: "Highly Accurate and Fast Two-View Pose Estimation by Fast Reduction of Spherical Image Distortion Effects"
+    authors: "Taisei Ando, <u>Junwoon Lee</u>, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and Atsushi Yamashita"
+    venue: "Proceedings of the 24th International Conference on Control, Automation and Systems (ICCAS)"
+    pages: "774-779"
+    year: 2024
+
+  - title: "TC-LTIO: Tightly-coupled LiDAR Thermal Inertial Odometry for LiDAR or Visual Odometry Degraded Environments"
+    authors: "<u>Junwoon Lee</u>, Taisei Ando, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and Atsushi Yamashita"
+    venue: "Proceedings of the 24th International Conference on Control, Automation and Systems (ICCAS)"
+    pages: "655-660"
+    year: 2024
+    note: "(Best Paper Award)"
+
+domestic:
+  - title: "全天球カメラを用いた大きな姿勢変化に頑健な学習ベース視覚オドメトリ"
+    authors: "安藤 大生, <u>Lee Junwoon</u>, 伊賀上 卓也, 中村 浩太郎, 篠崎 充, 北島 利浩, 安 琪, 山下 淳"
+    venue: "第26回計測自動制御学会システムインテグレーション部門講演会講演論文集 (SI2025)"
+    pages: "3011-3016"
+    year: 2025
+
+  - title: "反射強度情報を活用した Transformer アテンションによる高精度な学習ベース点群マッチング"
+    authors: "山口 滉平, 伊賀上 卓也, <u>Lee Junwoon</u>, 安藤 大生, 星井 智仁, 中村 浩太郎, 篠崎 充, 北島 利浩, 安 琪, 山下 淳"
+    venue: "第26回計測自動制御学会システムインテグレーション部門講演会講演論文集 (SI2025)"
+    pages: "736-741"
+    year: 2025
+
+  - title: "LiDAR-Visual-Inertial SLAM Robust in Structurally and Visually Degenerate Environments"
+    authors: "<u>Junwoon Lee</u>, Mitsuru Shinozaki, Toshihiro Kitajima, Qi An, and Atsushi Yamashita"
+    venue: "第42回日本ロボット学会学術講演会予稿集 (RSJ2024)"
+    number: "RSJ2024AC3K4-02"
+    pages: "1-4"
+    year: 2024
+
+  - title: "全天球画像の2視点間位置姿勢推定のための適応的閾値を用いた相互最近傍マッチング"
+    authors: "安藤 大生, 小松 廉, <u>Lee Junwoon</u>, 篠崎 充, 北島 利浩, 淺間 一, 安 琪, 山下 淳"
+    venue: "2024年度精密工学会春季大会学術講演会講演論文集"
+    pages: "496-497"
+    year: 2024
+
+  - title: "適応的閾値を用いた相互最近傍マッチングによる全天球画像の2視点間位置姿勢推定精度向上"
+    authors: "安藤 大生, 小松 廉, <u>Lee Junwoon</u>, 篠崎 充, 北島 利浩, 淺間 一, 安 琪, 山下 淳"
+    venue: "第24回計測自動制御学会システムインテグレーション部門講演会講演論文集 (SI2023)"
+    pages: "2448-2453"
+    year: 2023
